@@ -6,15 +6,12 @@ class Solution {
       return max(mn, min(mx, center));
     };
 
-    // the closest point to the circle within the rectangle
     int closestX = clamp(x_center, x1, x2);
     int closestY = clamp(y_center, y1, y2);
 
-    // the distance between the circle's center and its closest point
     int distanceX = x_center - closestX;
     int distanceY = y_center - closestY;
 
-    // If the distance < the circle's radius, an intersection occurs.
     return (distanceX * distanceX) + (distanceY * distanceY) <=
            (radius * radius);
   }
